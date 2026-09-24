@@ -10,6 +10,8 @@
 
 import base64
 import io
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 import pandas as pd
 import numpy as np
 
@@ -18,6 +20,8 @@ import dash_bootstrap_components as dbc
 import plotly.express as px
 
 from sklearn.linear_model import LogisticRegression
+
+
 
 # ===============================
 # ====== TRAIN MODEL ONCE =======
