@@ -10,6 +10,20 @@ import yfinance as yf
 # -------------------------------------------------
 app = FastAPI()
 
+# Static mapping for reliable company names without triggering rate limits
+COMPANY_NAMES = {
+    "NVDA": "NVIDIA Corporation",
+    "GOOGL": "Alphabet Inc.",
+    "AAPL": "Apple Inc.",
+    "MSFT": "Microsoft Corporation",
+    "AMZN": "Amazon.com, Inc.",
+    "META": "Meta Platforms, Inc.",
+    "AVGO": "Broadcom Inc.",
+    "TSLA": "Tesla, Inc.",
+    "ORCL": "Oracle Corporation",
+    "PLTR": "Palantir Technologies Inc."
+}
+
 
 # -------------------------------------------------
 # Health check endpoint
@@ -23,33 +37,22 @@ def health_check():
 # Stock analysis function
 # -------------------------------------------------
 def generate_us_stock_summary():
-
     end_date = datetime.now().date()
     start_date = end_date - timedelta(days=365)
 
-    symbols = [
-        "NVDA",
-        "GOOGL",
-        "AAPL",
-        "MSFT",
-        "AMZN",
-        "META",
-        "AVGO",
-        "TSLA",
-        "ORCL",
-        "PLTR",
-    ]
+    symbols = list(COMPANY_NAMES.keys())
 
+    # Single batch download avoids multiple connection requests
     stockdata = yf.download(
         tickers=symbols, start=start_date, end=end_date, progress=False
     )
 
     closeprice_df = stockdata["Close"].copy()
     returns_df = closeprice_df.pct_change() * 100
-
+    
     summary_df = pd.DataFrame({
         "Ticker": closeprice_df.columns,
-        "Company_Name": [yf.Ticker(ticker).info.get("shortName", "N/A") for ticker in closeprice_df.columns],
+        "Company_Name": [COMPANY_NAMES.get(ticker, "N/A") for ticker in closeprice_df.columns],
         "Max_Value": closeprice_df.max().values,
         "Min_Value": closeprice_df.min().values,
         "Current_Value": closeprice_df.iloc[-1].values,
@@ -77,7 +80,6 @@ def get_us_stock_summary():
 # -------------------------------------------------
 @app.get("/", response_class=HTMLResponse)
 def home():
-
     html_content = """
 <!DOCTYPE html>
 <html>
@@ -110,7 +112,6 @@ def home():
             cursor: not-allowed;
             opacity: 0.7;
         }
-        /* CSS Spinner Styling */
         .spinner {
             width: 16px;
             height: 16px;
@@ -141,13 +142,12 @@ def home():
         tr:nth-child(even) {
             background-color: #0a0a0a;
         }
-        /* Dynamic return colors */
         .positive {
-            color: #4caf50; /* Clean, visible green on dark background */
+            color: #4caf50;
             font-weight: bold;
         }
         .negative {
-            color: #f44336; /* Bright, clear red */
+            color: #f44336;
             font-weight: bold;
         }
     </style>
@@ -180,11 +180,9 @@ def home():
             const btn = document.getElementById('loadBtn');
             const btnText = document.getElementById('btnText');
             
-            // 1. Start loading state
             btn.disabled = true;
             btnText.textContent = 'Loading...';
             
-            // Add the spinner element dynamically
             const spinner = document.createElement('span');
             spinner.className = 'spinner';
             spinner.id = 'btnSpinner';
@@ -198,8 +196,6 @@ def home():
 
                     data.forEach(row => {
                         const tr = document.createElement('tr');
-                        
-                        // Parse return value to decide text color class
                         const returnValue = parseFloat(row["Avg_Daily_Return_%"]);
                         let returnClass = '';
                         
@@ -225,7 +221,6 @@ def home():
                     console.error(error);
                 })
                 .finally(() => {
-                    // 2. Reset loading state when fetch completes (success or failure)
                     btn.disabled = false;
                     btnText.textContent = 'Load Summary';
                     const activeSpinner = document.getElementById('btnSpinner');
@@ -233,10 +228,7 @@ def home():
                 });
         }
     </script>
-
 </body>
 </html>
-
     """
-
     return html_content
