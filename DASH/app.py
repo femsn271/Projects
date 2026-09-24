@@ -47,7 +47,7 @@ print("Model trained successfully on server startup")
 # ===============================
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.FLATLY])
-app.title = "Credit Default Prediction App"
+app.title = "Credit Default Prediction App - By Fernanda Machado"
 
 
 # ===============================
@@ -57,7 +57,7 @@ app.title = "Credit Default Prediction App"
 app.layout = dbc.Container([
 
     dbc.Row([
-        dbc.Col(html.H2("💳 Credit Default Prediction",
+        dbc.Col(html.H2("💳 Credit Default Prediction - By Fernanda Machado",
                          className="text-center text-primary mb-4"), width=12)
     ]),
 
@@ -80,7 +80,7 @@ app.layout = dbc.Container([
                             'borderStyle': 'dashed',
                             'borderRadius': '10px',
                             'textAlign': 'center',
-                            'backgroundColor': '#f8f9fa'
+                            'backgroundColor': "#FFFFFF"
                         },
                         multiple=False
                     ),
