@@ -1,5 +1,9 @@
-fastapi
-uvicorn
+dash
+dash-bootstrap-components
+plotly
+scikit-learn
 pandas
 numpy
-yfinance
+gunicorn
+yfinance==1.7.0
+curl_cffi==0.16.3
