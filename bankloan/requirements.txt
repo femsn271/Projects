@@ -4,5 +4,5 @@ matplotlib
 seaborn
 scikit-learn
 fastapi
-uvicorns
+uvicorn
 pydantic
