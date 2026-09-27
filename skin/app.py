@@ -4,6 +4,14 @@ import pandas as pd
 
 app = FastAPI()
 
+# -------------------------------------------------
+# Health check endpoint
+# -------------------------------------------------
+@app.get("/health")
+def health_check():
+    return {"message": "API is running"}
+
+# -------------------------------------------------
 @app.get("/campaign-analysis", response_class=HTMLResponse)
 def get_campaign_analysis():
     # Load data

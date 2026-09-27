@@ -9,7 +9,7 @@ app = FastAPI()
 # -------------------------------------------------
 @app.get("/health")
 def health_check():
-    return {"message": "US Stocks API is running"}
+    return {"message": "API is running"}
 
 
 # -------------------------------------------------

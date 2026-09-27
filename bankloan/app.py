@@ -5,6 +5,15 @@ import joblib
 
 app = FastAPI(title="Bank Loan Defaulters Prediction API")
 
+# -------------------------------------------------
+# Health check endpoint
+# -------------------------------------------------
+@app.get("/health")
+def health_check():
+    return {"message": "API is running"}
+
+
+
 # Load model and feature order
 model = joblib.load('rf_bank_model.pkl')
 features = joblib.load('model_features.pkl')
