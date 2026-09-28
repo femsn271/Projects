@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 import joblib
+import json
 
 # -----------------------------------------------------------------------------
 # 1. Logging Configuration
@@ -61,6 +62,15 @@ def run_training_pipeline():
     train_preds = rf_model.predict(X_train)
     train_acc = accuracy_score(y_train, train_preds)
     logger.info(f"Training Set Accuracy: {train_acc:.2%}")
+    
+    # Save metrics
+    metrics = {
+    "model_type": "Random Forest Classifier",
+    "n_estimators": 500,
+    "accuracy": float(train_acc)
+    }
+    with open("model_metrics.json", "w") as f:
+        json.dump(metrics, f)
 
     # Save model artifacts
     try:
@@ -124,3 +134,4 @@ def run_training_pipeline():
 
 if __name__ == "__main__":
     run_training_pipeline()
+

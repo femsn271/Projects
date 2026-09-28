@@ -60,18 +60,21 @@ def predict_default(customer: CustomerData):
     
 @app.get("/metadata")
 def get_model_metadata():
+    logger.info("Metadata endpoint called.")
     log_file = "training.log"
     accuracy = None
 
     if os.path.exists(log_file):
+        logger.info(f"Parsing '{log_file}' for accuracy score...")
         with open(log_file, "r") as f:
-            # Read lines in reverse to find the most recent training run
             for line in reversed(f.readlines()):
                 match = re.search(r"Training Set Accuracy:\s*([\d\.]+)%", line)
                 if match:
-                    # Convert '89.43%' string into float 0.8943
                     accuracy = float(match.group(1)) / 100.0
+                    logger.info(f"Parsed accuracy from log: {accuracy:.2%}")
                     break
+    else:
+        logger.warning(f"'{log_file}' not found on server disk. Returning default fallback accuracy.")
 
     return {
         "model_type": "Random Forest Classifier",

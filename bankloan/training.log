@@ -88,3 +88,77 @@
 2026-09-28 13:54:56,919 [WARNING] ModelTrainer: Data Drift Detected in 'CREDDEBT'! Train Mean: 1.55 -> Test Mean: 2.64 (Shift: 69.8%)
 2026-09-28 13:54:56,919 [WARNING] ModelTrainer: Data Drift Detected in 'OTHDEBT'! Train Mean: 3.06 -> Test Mean: 4.06 (Shift: 32.6%)
 2026-09-28 13:54:56,919 [INFO] ModelTrainer: Pipeline execution complete.
+2026-09-28 15:06:08,325 [INFO] ModelTrainer: ==================================================
+2026-09-28 15:06:08,325 [INFO] ModelTrainer: Starting Bank Loan Model Training Pipeline
+2026-09-28 15:06:08,325 [INFO] ModelTrainer: ==================================================
+2026-09-28 15:06:08,327 [INFO] ModelTrainer: Loaded training data 'BANK LOAN.csv' (700 rows, 8 columns)
+2026-09-28 15:06:08,327 [INFO] ModelTrainer: Identified target column: 'DEFAULTER'
+2026-09-28 15:06:08,327 [INFO] ModelTrainer: Feature set initialized with 6 variables: ['AGE', 'EMPLOY', 'ADDRESS', 'DEBTINC', 'CREDDEBT', 'OTHDEBT']
+2026-09-28 15:06:08,327 [INFO] ModelTrainer: Fitting Random Forest Classifier with 500 trees (random_state=42)...
+2026-09-28 15:06:08,939 [INFO] ModelTrainer: Random Forest training completed successfully.
+2026-09-28 15:06:08,984 [INFO] ModelTrainer: Training Set Accuracy: 89.43%
+2026-09-28 15:06:09,100 [INFO] ModelTrainer: Saved model artifacts: 'rf_bank_model.pkl' and 'model_features.pkl'
+2026-09-28 15:06:09,101 [INFO] ModelTrainer: Loaded test data 'BANK_LOAN_TEST.csv' (10 rows)
+2026-09-28 15:06:09,133 [INFO] ModelTrainer: Saved test predictions to 'BANK_LOAN_TEST_Predictions.csv'
+2026-09-28 15:06:09,133 [INFO] ModelTrainer: Running Data Drift Detection (Threshold: 10%)...
+2026-09-28 15:06:09,135 [WARNING] ModelTrainer: Data Drift Detected in 'AGE'! Train Mean: 1.90 -> Test Mean: 2.10 (Shift: 10.4%)
+2026-09-28 15:06:09,135 [WARNING] ModelTrainer: Data Drift Detected in 'DEBTINC'! Train Mean: 10.26 -> Test Mean: 14.00 (Shift: 36.4%)
+2026-09-28 15:06:09,136 [WARNING] ModelTrainer: Data Drift Detected in 'CREDDEBT'! Train Mean: 1.55 -> Test Mean: 2.64 (Shift: 69.8%)
+2026-09-28 15:06:09,136 [WARNING] ModelTrainer: Data Drift Detected in 'OTHDEBT'! Train Mean: 3.06 -> Test Mean: 4.06 (Shift: 32.6%)
+2026-09-28 15:06:09,136 [INFO] ModelTrainer: Pipeline execution complete.
+2026-09-28 15:08:12,896 [INFO] ModelTrainer: ==================================================
+2026-09-28 15:08:12,896 [INFO] ModelTrainer: Starting Bank Loan Model Training Pipeline
+2026-09-28 15:08:12,896 [INFO] ModelTrainer: ==================================================
+2026-09-28 15:08:12,898 [INFO] ModelTrainer: Loaded training data 'BANK LOAN.csv' (700 rows, 8 columns)
+2026-09-28 15:08:12,898 [INFO] ModelTrainer: Identified target column: 'DEFAULTER'
+2026-09-28 15:08:12,899 [INFO] ModelTrainer: Feature set initialized with 6 variables: ['AGE', 'EMPLOY', 'ADDRESS', 'DEBTINC', 'CREDDEBT', 'OTHDEBT']
+2026-09-28 15:08:12,899 [INFO] ModelTrainer: Fitting Random Forest Classifier with 500 trees (random_state=42)...
+2026-09-28 15:08:13,470 [INFO] ModelTrainer: Random Forest training completed successfully.
+2026-09-28 15:08:13,513 [INFO] ModelTrainer: Training Set Accuracy: 89.43%
+2026-09-28 15:08:13,622 [INFO] ModelTrainer: Saved model artifacts: 'rf_bank_model.pkl' and 'model_features.pkl'
+2026-09-28 15:08:13,623 [INFO] ModelTrainer: Loaded test data 'BANK_LOAN_TEST.csv' (10 rows)
+2026-09-28 15:08:13,655 [INFO] ModelTrainer: Saved test predictions to 'BANK_LOAN_TEST_Predictions.csv'
+2026-09-28 15:08:13,656 [INFO] ModelTrainer: Running Data Drift Detection (Threshold: 10%)...
+2026-09-28 15:08:13,656 [WARNING] ModelTrainer: Data Drift Detected in 'AGE'! Train Mean: 1.90 -> Test Mean: 2.10 (Shift: 10.4%)
+2026-09-28 15:08:13,657 [WARNING] ModelTrainer: Data Drift Detected in 'DEBTINC'! Train Mean: 10.26 -> Test Mean: 14.00 (Shift: 36.4%)
+2026-09-28 15:08:13,657 [WARNING] ModelTrainer: Data Drift Detected in 'CREDDEBT'! Train Mean: 1.55 -> Test Mean: 2.64 (Shift: 69.8%)
+2026-09-28 15:08:13,658 [WARNING] ModelTrainer: Data Drift Detected in 'OTHDEBT'! Train Mean: 3.06 -> Test Mean: 4.06 (Shift: 32.6%)
+2026-09-28 15:08:13,658 [INFO] ModelTrainer: Pipeline execution complete.
+2026-09-28 15:11:47,220 [INFO] ModelTrainer: ==================================================
+2026-09-28 15:11:47,220 [INFO] ModelTrainer: Starting Bank Loan Model Training Pipeline
+2026-09-28 15:11:47,220 [INFO] ModelTrainer: ==================================================
+2026-09-28 15:11:47,223 [INFO] ModelTrainer: Loaded training data 'BANK LOAN.csv' (700 rows, 8 columns)
+2026-09-28 15:11:47,223 [INFO] ModelTrainer: Identified target column: 'DEFAULTER'
+2026-09-28 15:11:47,266 [INFO] ModelTrainer: Feature set initialized with 6 variables: ['AGE', 'EMPLOY', 'ADDRESS', 'DEBTINC', 'CREDDEBT', 'OTHDEBT']
+2026-09-28 15:11:47,266 [INFO] ModelTrainer: Fitting Random Forest Classifier with 500 trees (random_state=42, class_weight='balanced')...
+2026-09-28 15:11:47,859 [INFO] ModelTrainer: Random Forest training completed successfully.
+2026-09-28 15:11:47,923 [INFO] ModelTrainer: Validation Accuracy: 75.00%
+2026-09-28 15:11:47,923 [INFO] ModelTrainer: Validation ROC-AUC: 0.8394
+2026-09-28 15:11:48,031 [INFO] ModelTrainer: Saved model artifacts successfully.
+2026-09-28 15:11:48,032 [INFO] ModelTrainer: Loaded test data 'BANK_LOAN_TEST.csv' (10 rows)
+2026-09-28 15:11:48,062 [INFO] ModelTrainer: Saved test predictions to 'BANK_LOAN_TEST_Predictions.csv'
+2026-09-28 15:11:48,062 [INFO] ModelTrainer: Running Data Drift Detection...
+2026-09-28 15:11:48,062 [WARNING] ModelTrainer: Data Drift Detected in 'AGE'! Train Mean: 1.90 -> Test Mean: 2.10 (Normalized Shift: 0.26 std)
+2026-09-28 15:11:48,063 [WARNING] ModelTrainer: Data Drift Detected in 'EMPLOY'! Train Mean: 8.31 -> Test Mean: 9.20 (Normalized Shift: 0.13 std)
+2026-09-28 15:11:48,063 [WARNING] ModelTrainer: Data Drift Detected in 'DEBTINC'! Train Mean: 10.07 -> Test Mean: 14.00 (Normalized Shift: 0.59 std)
+2026-09-28 15:11:48,063 [WARNING] ModelTrainer: Data Drift Detected in 'CREDDEBT'! Train Mean: 1.46 -> Test Mean: 2.64 (Normalized Shift: 0.60 std)
+2026-09-28 15:11:48,064 [WARNING] ModelTrainer: Data Drift Detected in 'OTHDEBT'! Train Mean: 2.90 -> Test Mean: 4.06 (Normalized Shift: 0.37 std)
+2026-09-28 15:11:48,064 [INFO] ModelTrainer: Pipeline execution complete.
+2026-09-28 15:13:27,312 [INFO] ModelTrainer: ==================================================
+2026-09-28 15:13:27,312 [INFO] ModelTrainer: Starting Bank Loan Model Training Pipeline
+2026-09-28 15:13:27,312 [INFO] ModelTrainer: ==================================================
+2026-09-28 15:13:27,315 [INFO] ModelTrainer: Loaded training data 'BANK LOAN.csv' (700 rows, 8 columns)
+2026-09-28 15:13:27,315 [INFO] ModelTrainer: Identified target column: 'DEFAULTER'
+2026-09-28 15:13:27,315 [INFO] ModelTrainer: Feature set initialized with 6 variables: ['AGE', 'EMPLOY', 'ADDRESS', 'DEBTINC', 'CREDDEBT', 'OTHDEBT']
+2026-09-28 15:13:27,315 [INFO] ModelTrainer: Fitting Random Forest Classifier with 500 trees (random_state=42)...
+2026-09-28 15:13:27,857 [INFO] ModelTrainer: Random Forest training completed successfully.
+2026-09-28 15:13:27,898 [INFO] ModelTrainer: Training Set Accuracy: 89.43%
+2026-09-28 15:13:28,001 [INFO] ModelTrainer: Saved model artifacts: 'rf_bank_model.pkl' and 'model_features.pkl'
+2026-09-28 15:13:28,002 [INFO] ModelTrainer: Loaded test data 'BANK_LOAN_TEST.csv' (10 rows)
+2026-09-28 15:13:28,029 [INFO] ModelTrainer: Saved test predictions to 'BANK_LOAN_TEST_Predictions.csv'
+2026-09-28 15:13:28,029 [INFO] ModelTrainer: Running Data Drift Detection (Threshold: 10%)...
+2026-09-28 15:13:28,030 [WARNING] ModelTrainer: Data Drift Detected in 'AGE'! Train Mean: 1.90 -> Test Mean: 2.10 (Shift: 10.4%)
+2026-09-28 15:13:28,030 [WARNING] ModelTrainer: Data Drift Detected in 'DEBTINC'! Train Mean: 10.26 -> Test Mean: 14.00 (Shift: 36.4%)
+2026-09-28 15:13:28,030 [WARNING] ModelTrainer: Data Drift Detected in 'CREDDEBT'! Train Mean: 1.55 -> Test Mean: 2.64 (Shift: 69.8%)
+2026-09-28 15:13:28,030 [WARNING] ModelTrainer: Data Drift Detected in 'OTHDEBT'! Train Mean: 3.06 -> Test Mean: 4.06 (Shift: 32.6%)
+2026-09-28 15:13:28,031 [INFO] ModelTrainer: Pipeline execution complete.
