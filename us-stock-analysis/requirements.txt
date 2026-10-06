@@ -1,9 +1,6 @@
-plotly
-scikit-learn
 yfinance==1.7.0
 curl_cffi==0.16.3
 fastapi
 uvicorn
 pandas
 numpy
-
