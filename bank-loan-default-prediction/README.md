@@ -6,6 +6,10 @@ The project was developed as an early machine learning module project and demons
 
 ## Live Application
 
+**Download Excel file**
+
+https://drive.google.com/file/d/1VSj886B3dptvjcH4ce3Jkhv4zhqVve1n/view?usp=drive_link
+
 **API deployed on Render:**
 
 https://bank-defaulters-predict.onrender.com
