@@ -16,13 +16,11 @@ Machine-readable JSON endpoint used to provide the campaign analysis to external
 
 ### Excel Workbook
 
-Download Skin Campaign Analysis Excel Workbook: 
+The project also includes a macro-enabled Excel workbook used with the JSON API integration.
 
-[skin-clinic-campaign-analysis/Skin campaign.xlsm](https://github.com/femsn271/Projects/blob/main/skin-clinic-campaign-analysis/Skin%20campaign.xlsm)
+https://github.com/femsn271/Projects/blob/main/skin-clinic-campaign-analysis/Skin%20campaign.xlsm
 
-The workbook is a macro-enabled Excel file (`.xlsm`) used as part of the
-JSON/API integration workflow.
-
+---
 
 ## Project Overview
 
@@ -93,6 +91,31 @@ Customers are grouped according to the number of unique products purchased:
 | >8 | More than 8 products |
 
 These groupings are implemented directly in the application logic.
+
+---
+
+## Application Architecture
+
+The project provides two FastAPI-based interfaces.
+                    Campaign CSV Dataset
+                            │
+                            ▼
+                       Pandas
+                            │
+                  Campaign Analysis
+                            │
+              ┌─────────────┴─────────────┐
+              │                           │
+              ▼                           ▼
+       HTML FastAPI App             JSON FastAPI App
+              │                           │
+              ▼                           ▼
+       Web Analysis Page             JSON Response
+                                          │
+                                          ▼
+                                   Excel Workbook
+                                  Skin campaign.xlsm
+
 
 Response rates are then calculated for each customer segment.
 Gender
