@@ -6,6 +6,9 @@ An interactive machine learning dashboard for exploring credit default predictio
 
 [Credit Default Prediction Dashboard](https://credit-default-prediction-t2pi.onrender.com)
 
+### Download Excel file test/example
+
+https://github.com/femsn271/Projects/blob/main/credit-default-prediction/assets/BANK%20LOAN_TEST.csv
 
 ## Overview
 
