@@ -14,6 +14,10 @@ https://campaign-analysis-json.onrender.com/campaign-analysis-json
 
 Machine-readable JSON endpoint used to provide the campaign analysis to external applications, including the Excel workflow.
 
+Download Excel file Skin campaign.xlsm
+
+https://drive.google.com/file/d/1NJ6lADpTF3YEpZGqWVfbhkK3yr34ZIL1/view?usp=sharing
+
 ---
 
 ## Project Overview
