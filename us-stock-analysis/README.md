@@ -95,12 +95,12 @@ The `/us-stocks` response contains the following fields for each stock:
 
 ## Project structure
 
-```text
+
 us-stock-analysis/
 ├── usstockanalysis.py
 ├── requirements.txt
 └── README.md
-```
+
 
 ## Running locally
 

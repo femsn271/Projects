@@ -3,6 +3,3 @@ venv/
 env/
 __pycache__/
 *.pyc
-setup.ps1
-README_exemplo.md
-env.txt
